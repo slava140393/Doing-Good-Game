@@ -1,0 +1,90 @@
+.frame {
+    border-left-color: rgb(226, 183, 255);
+    border-right-color: rgb(226, 183, 255);
+    border-top-color: rgb(226, 183, 255);
+    border-bottom-color: rgb(226, 183, 255);
+    border-top-width: 3px;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    border-left-width: 3px;
+    flex-basis: 100%;
+    flex-shrink: 1;
+    font-size: 50px;
+    -unity-font-style: bold;
+}
+
+.frame_weekday {
+    border-left-color: rgba(255, 255, 255, 0);
+    border-right-color: rgba(255, 255, 255, 0);
+    border-top-color: rgba(255, 255, 255, 0);
+    border-bottom-color: rgba(255, 255, 255, 0);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    flex-basis: 100%;
+    flex-shrink: 1;
+    font-size: 35px;
+    -unity-font-style: bold;
+}
+
+.frame:focus {
+    border-left-color: rgb(226, 183, 255);
+    border-right-color: rgb(226, 183, 255);
+    border-top-color: rgb(226, 183, 255);
+    border-bottom-color: rgb(226, 183, 255);
+    border-top-width: 3px;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    border-left-width: 3px;
+    flex-basis: 100%;
+    flex-shrink: 1;
+    background-color: rgba(226, 183, 255, 0.5);
+}
+
+.calendar_button {
+    flex-basis: 25%;
+    flex-shrink: 1;
+    background-color: rgba(255, 255, 255, 0);
+    border-left-color: rgba(255, 255, 255, 0);
+    border-right-color: rgba(255, 255, 255, 0);
+    border-top-color: rgba(255, 255, 255, 0);
+    border-bottom-color: rgba(255, 255, 255, 0);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    height: 100%;
+    -unity-background-image-tint-color: rgb(159, 14, 255);
+    -unity-background-scale-mode: scale-to-fit;
+    justify-content: center;
+    align-items: center;
+    scale: 0.7 0.7;
+    translate: 0 4px;
+}
+
+.frame_clean {
+    border-left-color: rgba(226, 183, 255, 0);
+    border-right-color: rgba(226, 183, 255, 0);
+    border-top-color: rgba(226, 183, 255, 0);
+    border-bottom-color: rgba(226, 183, 255, 0);
+    border-top-width: 3px;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    border-left-width: 3px;
+    flex-basis: 100%;
+    flex-shrink: 1;
+    color: rgba(27, 27, 27, 0);
+}
+
+.frame_today {
+    background-color: rgba(226, 183, 255, 0.78);
+}

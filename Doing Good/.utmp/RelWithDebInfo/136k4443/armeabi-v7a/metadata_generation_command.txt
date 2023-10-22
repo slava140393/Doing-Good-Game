@@ -1,0 +1,21 @@
+                    -HG:\Unity Projects\Doing Good\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\cpp
+-DCMAKE_SYSTEM_NAME=Android
+-DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+-DCMAKE_SYSTEM_VERSION=23
+-DANDROID_PLATFORM=android-23
+-DANDROID_ABI=armeabi-v7a
+-DCMAKE_ANDROID_ARCH_ABI=armeabi-v7a
+-DANDROID_NDK=G:\Unity\2023.3.0a7\Editor\Data\PlaybackEngines\AndroidPlayer\NDK
+-DCMAKE_ANDROID_NDK=G:\Unity\2023.3.0a7\Editor\Data\PlaybackEngines\AndroidPlayer\NDK
+-DCMAKE_TOOLCHAIN_FILE=G:\Unity\2023.3.0a7\Editor\Data\PlaybackEngines\AndroidPlayer\NDK\build\cmake\android.toolchain.cmake
+-DCMAKE_MAKE_PROGRAM=G:\Unity\2023.3.0a7\Editor\Data\PlaybackEngines\AndroidPlayer\SDK\cmake\3.22.1\bin\ninja.exe
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=G:\Unity Projects\Doing Good\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\cxx\RelWithDebInfo\136k4443\obj\armeabi-v7a
+-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=G:\Unity Projects\Doing Good\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\cxx\RelWithDebInfo\136k4443\obj\armeabi-v7a
+-DCMAKE_BUILD_TYPE=RelWithDebInfo
+-DCMAKE_FIND_ROOT_PATH=G:\Unity Projects\Doing Good\.utmp\RelWithDebInfo\136k4443\prefab\armeabi-v7a\prefab
+-BG:\Unity Projects\Doing Good\.utmp\RelWithDebInfo\136k4443\armeabi-v7a
+-GNinja
+-DBUILD_GRADLE_DIRECTORY=G:\Unity Projects\Doing Good\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary
+-DANDROID_STL=c++_shared
+                    Build command args: []
+                    Version: 2

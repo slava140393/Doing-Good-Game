@@ -1,0 +1,79 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Stylesheet/Resources/Stylesheet_GlobalFont.uss?fileID=7433441132597879392&amp;guid=a07a9530aca95e049a563898d010d2fa&amp;type=3#Stylesheet_GlobalFont" />
+    <Style src="project://database/Assets/UI/Stylesheet/Resources/Stylesheet_Calendar.uss?fileID=7433441132597879392&amp;guid=f3d49caecaefe444b9d605e826310164&amp;type=3#Stylesheet_Calendar" />
+    <ui:VisualElement name="VisualElement" style="flex-grow: 1; align-items: center; justify-content: space-evenly; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; background-color: rgb(255, 255, 255); padding-top: 0; padding-right: 10px; padding-bottom: 0; padding-left: 10px;">
+        <ui:VisualElement name="Months" style="flex-grow: 0; width: 100%; flex-basis: 10%; flex-direction: row; justify-content: space-around; align-items: center;">
+            <ui:Button name="PreviousMonth" class="calendar_button" style="background-image: url(&apos;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=-2236324273849735119&amp;guid=74c5d2b2757ddc341b5aa815de45f96e&amp;type=3#arrow-left@2x&apos;); -unity-background-scale-mode: scale-to-fit; scale: 0.7 0.7;" />
+            <ui:Label text="Сентябрь" name="CurrentMonth" class="font text_size" style="font-size: 50px; -unity-text-align: middle-center; -unity-font-style: bold;" />
+            <ui:Button name="NextMonth" class="calendar_button" style="background-image: url(&apos;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=-1087164816274819069&amp;guid=74c5d2b2757ddc341b5aa815de45f96e&amp;type=3#arrow-right@2x&apos;); -unity-background-scale-mode: scale-to-fit;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="DaysPanel" style="flex-grow: 1; width: 100%; margin-bottom: 20px;">
+            <ui:VisualElement name="Weekday" style="flex-grow: 0; flex-basis: 8%; flex-direction: row; justify-content: space-around; align-items: center; border-left-color: rgb(226, 183, 255); border-right-color: rgb(226, 183, 255); border-top-color: rgb(226, 183, 255); border-bottom-color: rgb(226, 183, 255); border-top-width: 0; border-right-width: 0; border-bottom-width: 3px; border-left-width: 0;">
+                <ui:Label text="Пн" class="font frame_weekday" style="-unity-text-align: middle-center; flex-shrink: 1;" />
+                <ui:Label text="Вт" class="font frame_weekday" style="-unity-text-align: middle-center; flex-shrink: 1;" />
+                <ui:Label text="Ср" class="font frame_weekday" style="-unity-text-align: middle-center; flex-shrink: 1;" />
+                <ui:Label text="Чт" class="font frame_weekday" style="-unity-text-align: middle-center;" />
+                <ui:Label text="Пт" class="font frame_weekday" style="-unity-text-align: middle-center;" />
+                <ui:Label text="Сб" enable-rich-text="true" class="font frame_weekday" style="-unity-text-align: middle-center;" />
+                <ui:Label text="Вс" class="font frame_weekday" style="-unity-text-align: middle-center;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Month" style="flex-grow: 1; padding-bottom: 10%;">
+                <ui:VisualElement name="Week" style="flex-grow: 1; flex-direction: row; justify-content: space-around;">
+                    <ui:Label text="1" name="Day" focusable="true" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="2" name="Day" focusable="true" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="3" name="Day" focusable="true" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="4" name="Day" focusable="true" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="5" name="Day" focusable="true" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="6" name="Day" focusable="true" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="7" name="Day" focusable="true" class="font frame" style="-unity-text-align: middle-center;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Week" style="flex-grow: 1; flex-direction: row; justify-content: space-around;">
+                    <ui:Label text="8" name="Day" focusable="true" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="9" name="Day" focusable="true" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="10" name="Day" focusable="true" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="11" name="Day" focusable="true" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="12" name="Day" focusable="true" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="13" name="Day" focusable="true" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="14" name="Day" focusable="true" class="font frame" style="-unity-text-align: middle-center;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Week" style="flex-grow: 1; flex-direction: row; justify-content: space-around;">
+                    <ui:Label text="12" name="Day" focusable="true" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="13" name="Day" focusable="true" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="14" name="Day" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="15" name="Day" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="16" name="Day" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="17" name="Day" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="18" name="Day" class="font frame" style="-unity-text-align: middle-center;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Week" style="flex-grow: 1; flex-direction: row; justify-content: space-around;">
+                    <ui:Label text="19" name="Day" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="20" name="Day" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="21" name="Day" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="22" name="Day" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="23" name="Day" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="24" name="Day" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="25" name="Day" class="font frame" style="-unity-text-align: middle-center;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Week" style="flex-grow: 1; flex-direction: row; justify-content: space-around;">
+                    <ui:Label text="26" name="Day" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="27" name="Day" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="28" name="Day" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="29" name="Day" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="30" name="Day" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="31" name="Day" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="1" name="Day" class="font frame" style="-unity-text-align: middle-center;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Week" style="flex-grow: 1; flex-direction: row; justify-content: space-around;">
+                    <ui:Label text="26" name="Day" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="27" name="Day" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="28" name="Day" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="29" name="Day" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="30" name="Day" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="31" name="Day" class="font frame" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="1" name="Day" class="font frame frame_clean" style="-unity-text-align: middle-center;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="ADS" style="flex-grow: 0; width: 100%; flex-basis: 15%;" />
+    </ui:VisualElement>
+</ui:UXML>
