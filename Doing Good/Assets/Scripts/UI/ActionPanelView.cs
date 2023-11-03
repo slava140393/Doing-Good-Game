@@ -176,7 +176,6 @@ namespace UI
 		}
 
 
-
 		private void OnIntFieldUnfocused(FocusOutEvent evt)
 		{
 			if(!_actionData.IsEmptyScore() && _isChanged)
