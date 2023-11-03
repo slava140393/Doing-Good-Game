@@ -5,11 +5,10 @@ namespace UI
 {
 	public class VerticalScrollViewManipulator : Manipulator
 	{
+		private const float MinScrollingDistanceY = 50f;
 		private Vector3 _startPosition;
 		private bool _isMoved;
 		private bool _wasMoved;
-		private float _minScrollingDistanceY = 50f;
-		private float _minScrolllingDistanceX = 150f;
 
 		protected override void RegisterCallbacksOnTarget()
 		{
@@ -44,10 +43,9 @@ namespace UI
 			if(_isMoved)
 			{
 
-				if(Mathf.Abs(_startPosition.y - evt.position.y) > _minScrollingDistanceY && Mathf.Abs(_startPosition.x - evt.position.x) < _minScrolllingDistanceX)
+				if(Mathf.Abs(_startPosition.y - evt.position.y) > MinScrollingDistanceY)
 				{
 					evt.StopPropagation();
-					Debug.Log("Scroll");
 					_wasMoved = true;
 					_isMoved = false;
 				}

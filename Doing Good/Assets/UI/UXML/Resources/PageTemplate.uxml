@@ -10,7 +10,7 @@
                 <ui:Label tabindex="-1" text="Действие" display-tooltip-when-elided="true" class="font" style="font-size: 35px; -unity-font-style: bold; -unity-text-align: middle-center; flex-basis: 100%; flex-shrink: 1;" />
                 <ui:Label tabindex="-1" text="Ценность" display-tooltip-when-elided="true" class="font" style="-unity-font-style: bold; font-size: 35px; -unity-text-align: middle-center; flex-basis: 100%; flex-shrink: 1;" />
             </ui:VisualElement>
-            <ui:ScrollView horizontal-scroller-visibility="Hidden" vertical-scroller-visibility="Hidden" name="ActionsPanel" focusable="true" elasticity="0" style="flex-grow: 1;" />
+            <ui:ScrollView horizontal-scroller-visibility="Hidden" vertical-scroller-visibility="Hidden" name="ActionsPanel" focusable="true" elasticity="0" nested-interaction-kind="Default" style="flex-grow: 1;" />
         </ui:VisualElement>
         <ui:VisualElement name="Calendar" style="flex-basis: 10%; flex-direction: row; align-items: center; justify-content: center;">
             <ui:VisualElement style="flex-grow: 0; flex-direction: row; flex-basis: 80%;">

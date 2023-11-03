@@ -13,7 +13,7 @@ namespace UI
 		{
 
 		}
-		private const int BaseCountActionData = 10;
+		private const int BaseCountActionData = 15;
 		private const int NextDay = +1;
 		private const int PreviousDay = -1;
 		private const string RoublesGood = "Рублей Добра";
@@ -49,7 +49,7 @@ namespace UI
 		private int _totalScore = 0;
 		public void InitializePage()
 		{
-			this.AddManipulator(new PageSwipeManipulator(ToNextDayPage));
+			//this.AddManipulator(new PageSwipeManipulator(ToNextDayPage));
 			_actionPanelViewList = new List<ActionPanelView>();
 			style.flexGrow = 1;
 			CreatePage();
