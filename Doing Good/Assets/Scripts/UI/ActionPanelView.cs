@@ -120,9 +120,17 @@ namespace UI
 			_textFieldAction.keyboardType = TouchScreenKeyboardType.ASCIICapable;
 			_container.Add(_textFieldAction);
 
+			_textFieldAction.Q<TextElement>().focusable = false;
+			
+			_textFieldAction.Q<TextElement>().RegisterCallback<PointerUpEvent>(OnTextFieldPointerUp);
 			_textFieldAction.RegisterCallback<FocusInEvent>(OnTextFieldFocused);
 			_textFieldAction.RegisterCallback<FocusOutEvent>(OnTextFieldUnfocused);
 			_textFieldAction.RegisterCallback<ChangeEvent<string>>(OnTextFieldChanged);
+		}
+		private void OnTextFieldPointerUp(PointerUpEvent evt)
+		{
+			_textFieldAction.Q<TextElement>().focusable = true;
+			_textFieldAction.Focus();
 		}
 		private void OnTextFieldFocused(FocusInEvent evt)
 		{
@@ -147,6 +155,7 @@ namespace UI
 				elem.RemoveFromClassList(USSFont);
 			}
 			_isChanged = false;
+			_textFieldAction.Q<TextElement>().focusable = false;
 		}
 
 
@@ -170,9 +179,16 @@ namespace UI
 			_intFieldAction.keyboardType = TouchScreenKeyboardType.NumberPad;
 			_container.Add(_intFieldAction);
 
+			_intFieldAction.Q<TextElement>().focusable = false;
+			_intFieldAction.Q<TextElement>().RegisterCallback<PointerUpEvent>(OnIntFieldPointerUp);
 			_intFieldAction.RegisterCallback<FocusInEvent>(OnIntFieldFocused);
 			_intFieldAction.RegisterCallback<FocusOutEvent>(OnIntFieldUnfocused);
 			_intFieldAction.RegisterCallback<ChangeEvent<int>>(OnIntFieldChanged);
+		}
+		private void OnIntFieldPointerUp(PointerUpEvent evt)
+		{
+			_intFieldAction.Q<TextElement>().focusable = true;
+			_textFieldAction.Focus();
 		}
 
 
@@ -194,6 +210,7 @@ namespace UI
 				elem.AddToClassList(USSFontTransparent);
 				elem.RemoveFromClassList(USSFont);
 			}
+			_intFieldAction.Q<TextElement>().focusable = false;
 			_isChanged = false;
 
 		}
@@ -220,7 +237,9 @@ namespace UI
 		public void UnregisterCallbacks()
 		{
 			_textFieldAction.UnregisterCallback<FocusOutEvent>(OnTextFieldUnfocused);
+			_textFieldAction.UnregisterCallback<FocusInEvent>(OnTextFieldFocused);
 			_textFieldAction.UnregisterCallback<ChangeEvent<string>>(OnTextFieldChanged);
+			_textFieldAction.Q<TextElement>().UnregisterCallback<PointerUpEvent>(OnTextFieldPointerUp);
 
 			_intFieldAction.UnregisterCallback<FocusInEvent>(OnIntFieldFocused);
 			_intFieldAction.UnregisterCallback<FocusOutEvent>(OnIntFieldUnfocused);

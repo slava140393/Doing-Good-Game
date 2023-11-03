@@ -49,6 +49,7 @@ namespace UI
 		private int _totalScore = 0;
 		public void InitializePage()
 		{
+			this.AddManipulator(new PageSwipeManipulator(ToNextDayPage));
 			_actionPanelViewList = new List<ActionPanelView>();
 			style.flexGrow = 1;
 			CreatePage();
@@ -147,9 +148,15 @@ namespace UI
 		}
 		private void ShowNextDayPage(PointerUpEvent evt, int direction)
 		{
+			ToNextDayPage(direction);
+		}
+
+		private void ToNextDayPage(int direction)
+		{
 			DateTime date = _currentData.GetDateAsDateTime();
 			OnChangeDayButtonClicked?.Invoke(date.AddDays(direction).ToString("dd.MM.yyyy"));
 		}
+
 		private void CalendarPageButtonClicked(PointerUpEvent evt)
 		{
 			OnCalendarPageButtonClicked?.Invoke();
@@ -164,6 +171,7 @@ namespace UI
 		private void SetupActionPanelView()
 		{
 			_actionsPanel = this.Query<ScrollView>("ActionsPanel");
+			_actionsPanel.AddManipulator(new VerticalScrollViewManipulator());
 			_actionsPanel.mode = ScrollViewMode.Vertical;
 			_actionsPanel.verticalScrollerVisibility = ScrollerVisibility.Hidden;
 		}
