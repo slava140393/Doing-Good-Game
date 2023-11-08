@@ -13,7 +13,7 @@ namespace UI
 		{
 
 		}
-		private const int BaseCountActionData = 15;
+		private const int BaseCountActionData = 12;
 		private const int NextDay = +1;
 		private const int PreviousDay = -1;
 		private const string RoublesGood = "Рублей Добра";
@@ -35,7 +35,7 @@ namespace UI
 
 		private DataPerDay _currentData;
 
-		private ScrollView _actionsPanel;
+		private VisualElement _actionsPanel;
 		private Button _adviceButton;
 		private List<ActionPanelView> _actionPanelViewList;
 		private Button _calendarPageButton;
@@ -49,7 +49,6 @@ namespace UI
 		private int _totalScore = 0;
 		public void InitializePage()
 		{
-			//this.AddManipulator(new PageSwipeManipulator(ToNextDayPage));
 			_actionPanelViewList = new List<ActionPanelView>();
 			style.flexGrow = 1;
 			CreatePage();
@@ -88,14 +87,18 @@ namespace UI
 				ActionPanelView panel = CreateEmptyActionPanelView();
 				panel.SetupData(currentData.ActionDataList[i]);
 
-				if(_currentData.ActionDataList.Count - 1 == i && !_currentData.ActionDataList[i].IsEmptyData())
+				if(i>=BaseCountActionData-1)
 				{
-					CreateEmptyData();
 					break;
 				}
+				// if(_currentData.ActionDataList.Count - 1 == i && !_currentData.ActionDataList[i].IsEmptyData())
+				// {
+				// 	CreateEmptyData();
+				// 	break;
+				// }
 			}
 			int emptyActionPanelViewCount = BaseCountActionData - _currentData.ActionDataList.Count;
-
+			
 			if(emptyActionPanelViewCount > 0)
 			{
 				for( int i = 0; i < emptyActionPanelViewCount; i++ )
@@ -110,7 +113,6 @@ namespace UI
 		}
 		private void CreateEmptyData()
 		{
-
 			ActionPanelView panelView = CreateEmptyActionPanelView();
 			ActionData data = _currentData.AddNewActionData();
 			panelView.SetupData(data);
@@ -148,15 +150,9 @@ namespace UI
 		}
 		private void ShowNextDayPage(PointerUpEvent evt, int direction)
 		{
-			ToNextDayPage(direction);
-		}
-
-		private void ToNextDayPage(int direction)
-		{
 			DateTime date = _currentData.GetDateAsDateTime();
 			OnChangeDayButtonClicked?.Invoke(date.AddDays(direction).ToString("dd.MM.yyyy"));
 		}
-
 		private void CalendarPageButtonClicked(PointerUpEvent evt)
 		{
 			OnCalendarPageButtonClicked?.Invoke();
@@ -170,10 +166,8 @@ namespace UI
 		}
 		private void SetupActionPanelView()
 		{
-			_actionsPanel = this.Query<ScrollView>("ActionsPanel");
-			_actionsPanel.AddManipulator(new VerticalScrollViewManipulator());
-			_actionsPanel.mode = ScrollViewMode.Vertical;
-			_actionsPanel.verticalScrollerVisibility = ScrollerVisibility.Hidden;
+			_actionsPanel = this.Q("ActionsPanel");
+			
 		}
 
 		private ActionPanelView CreateEmptyActionPanelView()
@@ -181,7 +175,7 @@ namespace UI
 			ActionPanelView actionPanelView = new ActionPanelView();
 			_actionPanelViewList.Add(actionPanelView);
 			actionPanelView.Initialize();
-			_actionsPanel.contentContainer.Add(actionPanelView);
+			_actionsPanel.Add(actionPanelView);
 			actionPanelView.OnActionDataFilled += OnActionDataFilled;
 			return actionPanelView;
 		}
@@ -196,18 +190,18 @@ namespace UI
 			foreach (ActionPanelView actionPanelView in _actionPanelViewList)
 			{
 				actionPanelView.UnregisterCallbacks();
-				_actionsPanel.contentContainer.Remove(actionPanelView);
+				_actionsPanel.Remove(actionPanelView);
 			}
 			_actionPanelViewList.Clear();
 		}
 		private void OnActionDataFilled(ActionData actionData)
 		{
-			if(actionData.EntryNumber == _actionPanelViewList.Count)
-			{
-				ActionPanelView panelView = CreateEmptyActionPanelView();
-				ActionData data = _currentData.AddNewActionData();
-				panelView.SetupData(data);
-			}
+			// if(actionData.EntryNumber == _actionPanelViewList.Count)
+			// {
+			// 	ActionPanelView panelView = CreateEmptyActionPanelView();
+			// 	ActionData data = _currentData.AddNewActionData();
+			// 	panelView.SetupData(data);
+			// }
 			FillCounterLabel();
 
 			OnCurrentDataChanged?.Invoke(_currentData);
